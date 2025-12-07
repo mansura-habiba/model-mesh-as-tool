@@ -1,6 +1,6 @@
 # Model Mesh as Tool
 
-Model Mesh Composer for Claude Desktop that sets up a Model Mesh Tool with Guardian, Vision, and Text models for use with Claude Desktop via MCP (Model Context Protocol).
+Model Mesh Composer is an MCP server which exposes different small LLMs such as IBM Granite Guardian, IBM Granite Docling, and other models via MCP (Model Context Protocol).
 
 ## Prerequisites
 
@@ -47,7 +47,21 @@ Model Mesh Composer for Claude Desktop that sets up a Model Mesh Tool with Guard
    python main.py
    ```
 
-4. Restart Claude Desktop to load the new MCP server
+## Configure with Claude Desktop 
+
+Here is the Claude configuration 
+
+```
+"model-mesh": {
+      "command": "/absolute path to/model-mesh-as-tool/.venv/bin/python",
+      "args": [
+        "/absolute path to/model-mesh-as-tool/main.py"
+      ],
+      "env": {
+        "OLLAMA_BASE_URL": "http://localhost:11434"
+      }
+    }
+```
 
 ## Configuration
 
@@ -55,6 +69,8 @@ The tool is configured with:
 - **Guardian model**: `ibm/granite3.3-guardian:8b` with thinking capabilities
 - **Vision model**: `ibm/granite-docling` for document processing
 - **Base URL**: Configurable via `OLLAMA_BASE_URL` environment variable (default: `http://localhost:11434`)
+
+To add more model make sure they are avail;able through ollama and then update the configuration input for `ModelMeshTool`
 
 You can customize the configuration by modifying the `model_config` dictionary in `main.py`.
 
