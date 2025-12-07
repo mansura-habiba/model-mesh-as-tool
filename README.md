@@ -1,7 +1,7 @@
 # Model Mesh as Tool
 
 Model Mesh Composer is an MCP server which exposes different small LLMs such as IBM Granite Guardian, IBM Granite Docling, and other models via MCP (Model Context Protocol).
-
+This specific Composer leverage ModelMesh Tool from [mcp-composer](https://github.com/ibm/mcp-composer) Library which can be downloaded from [pypi]((https://pypi.org/project/mcp-composer/0.1.0.9/))
 ## Prerequisites
 
 - Python 3.12 or higher
